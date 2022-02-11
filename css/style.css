@@ -1,0 +1,167 @@
+/* rubik-regular - latin */
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/rubik-v18-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/rubik-v18-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/rubik-v18-latin-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/rubik-v18-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../fonts/rubik-v18-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/rubik-v18-latin-regular.svg#Rubik")
+      format("svg"); /* Legacy iOS */
+}
+/* rubik-500 - latin */
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/rubik-v18-latin-500.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/rubik-v18-latin-500.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/rubik-v18-latin-500.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/rubik-v18-latin-500.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../fonts/rubik-v18-latin-500.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/rubik-v18-latin-500.svg#Rubik")
+      format("svg"); /* Legacy iOS */
+}
+/* noto-sans-regular - latin */
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/noto-sans-v25-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/noto-sans-v25-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/noto-sans-v25-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/noto-sans-v25-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../fonts/noto-sans-v25-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/noto-sans-v25-latin-regular.svg#NotoSans") format("svg"); /* Legacy iOS */
+}
+/* noto-sans-700 - latin */
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/noto-sans-v25-latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/noto-sans-v25-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/noto-sans-v25-latin-700.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/noto-sans-v25-latin-700.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../fonts/noto-sans-v25-latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/noto-sans-v25-latin-700.svg#NotoSans") format("svg"); /* Legacy iOS */
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+ul,
+li,
+a {
+  list-style-type: none;
+  text-decoration: none;
+}
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "Rubik";
+  font-family: "Noto Sans";
+  font-size: 16px;
+  line-height: 1.5;
+  background-image: url("../images/books-bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.site-main {
+  flex-grow: 1;
+}
+.main {
+  width: 350px;
+}
+.login__page {
+  margin: auto;
+  align-items: center;
+}
+/* .main {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+.login {
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  margin-bottom: 30px;
+}
+.input__name {
+  margin-bottom: 20px;
+}
+.login:hover {
+  opacity: 0.7;
+}
+.input {
+  width: 300px;
+  background-color: transparent;
+  padding: 12px 13px;
+  border: none;
+  border: 1px solid #fff;
+  border-radius: 19px;
+}
+.input:hover {
+  opacity: 0.8;
+}
+.input:active {
+  opacity: 0.4;
+}
+.btn {
+  width: 300px;
+  align-items: center;
+}
+.forgot__link {
+  margin: 0px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.forgot {
+  margin-top: 11px;
+  font-size: 16px;
+  color: #fff;
+}
