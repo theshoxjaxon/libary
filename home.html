@@ -12,7 +12,6 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="icon" href="./images/logo-books.png" />
-    <link rel="stylesheet" href="./css/animation.css" />
     <link rel="stylesheet" href="./css/home.css" />
     <title>Home Page</title>
   </head>
@@ -27,12 +26,27 @@
             height="44"
           />
         </a>
-        <div>
+        <div class="header__div">
           <input class="input" type="text" placeholder="search books" />
+          <button type="submit" class="btn btn-danger">Watch</button>
         </div>
         <button class="logout btn btn-info">Logout</button>
       </div>
     </header>
+    <main class="main">
+      <section>
+        <h1 class="visually-hidden">Started Main</h1>
+        <div class="main__top">
+          <p>Showing 18 Result(s)</p>
+          <button class="btn btn-danger">Order by newest</button>
+        </div>
+        <div>
+          <ul class="main__list">
+            <li class="main__items"></li>
+          </ul>
+        </div>
+      </section>
+    </main>
     <!-- button with animation -->
     <!-- LEARN MORE -->
     <!-- <div class="col-md-3 col-sm-3 col-xs-6">

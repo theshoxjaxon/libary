@@ -1,4 +1,4 @@
-html {
+/* html {
   background-image: linear-gradient(
     rgba(255, 255, 255, 0.5),
     rgba(0, 0, 0, 0.6)
@@ -40,8 +40,7 @@ html {
   100% {
     background-color: #c8ff02;
   }
-}
-
+} */
 a,
 li,
 ul {
@@ -54,6 +53,15 @@ ul {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .header__container {
@@ -72,6 +80,7 @@ ul {
   border: none;
   border: 1px solid dodgerblue;
   border-radius: 19px;
+  color: black;
 }
 .input:active {
   border: 1px solid dodgerblue;
@@ -79,4 +88,9 @@ ul {
 
 .input:hover {
   border: 1px solid dodgerblue;
+}
+.main__top {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 40px;
 }
