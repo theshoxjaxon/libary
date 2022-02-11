@@ -126,7 +126,7 @@ img {
   transform: translate(-50%, -50%);
 } */
 .login {
-  display: flex;
+  display: inline-block;
   align-items: center;
   margin: 0px;
   margin-bottom: 30px;

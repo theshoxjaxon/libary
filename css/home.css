@@ -1,0 +1,43 @@
+html {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(0, 0, 0, 0.6)
+  );
+  background-color: #fffa02;
+  animation: rgb 30s infinite alternate;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes rgb {
+  10% {
+    background-color: #ff6b02;
+  }
+  20% {
+    background-color: #ff0602;
+  }
+  30% {
+    background-color: #ff0289;
+  }
+  40% {
+    background-color: #bf02ff;
+  }
+  50% {
+    background-color: #022cff;
+  }
+  60% {
+    background-color: #02bfff;
+  }
+  70% {
+    background-color: #02ffbb;
+  }
+  80% {
+    background-color: #02ff28;
+  }
+  90% {
+    background-color: #63ff02;
+  }
+  100% {
+    background-color: #c8ff02;
+  }
+}

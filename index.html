@@ -10,9 +10,11 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" href="./images/logo-books.png" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/animation.css" />
-    <title>Document</title>
+    <title>LogIn Page</title>
   </head>
   <body>
     <div class="login__page">
@@ -31,7 +33,7 @@
               </a>
               <h1>BookShelter</h1>
             </div>
-            <form>
+            <form class="form" action="">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -47,8 +49,10 @@
                 </svg>
                 <input
                   class="input input__name"
+                  name="inputName"
                   placeholder="Username"
                   type="text"
+                  required
                 />
               </div>
               <div>
@@ -64,15 +68,16 @@
                     d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"
                   />
                 </svg>
-                <input class="input" type="password" placeholder="password" />
+                <input
+                  class="input input__password"
+                  name="inputPassword"
+                  type="password"
+                  placeholder="password"
+                  required
+                />
               </div>
               <div class="col-md-3 col-sm-3 col-xs-6">
-                <a
-                  type="submit"
-                  href="#"
-                  class="btn btn-sm animated-button victoria-two"
-                  >Login</a
-                >
+                <button class="btn btn-info">Login</button>
                 <a class="forgot__link" href="#"
                   ><i class="forgot">Forgot password?</i></a
                 >
@@ -96,6 +101,11 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="./js/login.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
