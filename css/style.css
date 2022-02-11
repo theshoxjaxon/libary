@@ -151,9 +151,13 @@ img {
 }
 .input:hover {
   opacity: 0.8;
+  transition: ease 1s;
+  width: 350px;
 }
 .input:active {
   opacity: 0.4;
+  transition: ease 1s;
+  width: 350px;
 }
 .btn {
   width: 300px;

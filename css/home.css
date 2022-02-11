@@ -54,6 +54,12 @@ ul {
   padding: 0px;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0px;
+}
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -88,9 +94,58 @@ ul {
 
 .input:hover {
   border: 1px solid dodgerblue;
+  transition: all 1s;
+  width: 700px;
 }
 .main__top {
   display: flex;
   justify-content: space-around;
   padding: 12px 40px;
+}
+.main__items {
+  width: 282px;
+  padding: 13px 15px;
+}
+.dfdsfads {
+  padding: 18px 20px;
+}
+.button__secondary {
+  margin-top: 5px;
+  background-color: dimgray;
+}
+.button__warning {
+  background-color: #ffd80d;
+}
+.button__info {
+  color: blue;
+  margin-left: 5px;
+}
+.button__info {
+  background-color: dodgerblue;
+}
+.button__info:hover {
+  opacity: 0.6;
+}
+.button {
+  width: 246px;
+  display: inline-block;
+  border: none;
+  border-radius: 19px;
+  padding: 10px 26px;
+}
+.button:hover {
+  opacity: 0.8;
+}
+.button:active {
+  opacity: 0.6;
+}
+.main__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main__items {
+  margin-top: 20px;
 }
