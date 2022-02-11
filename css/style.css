@@ -108,6 +108,10 @@ img {
   height: auto;
   vertical-align: middle;
 }
+.button {
+  margin-top: 43px;
+  border: none;
+}
 
 .site-main {
   flex-grow: 1;

@@ -13,8 +13,8 @@ elForm.addEventListener("submit", function (evt) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      email: "eve.holt@reqres.in",
-      password: "cityslicka",
+      email: nameValue,
+      password: passwordValue,
     }),
   })
     .then((res) => res.json())
@@ -23,6 +23,8 @@ elForm.addEventListener("submit", function (evt) {
         window.localStorage.setItem("token", data.token);
 
         window.location.replace("home.html");
+      } else {
+        alert("Iltimos qayta urinib koring");
       }
     });
 });
