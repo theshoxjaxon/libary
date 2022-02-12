@@ -3,7 +3,7 @@ let elForm = document.querySelector(".form");
 let elInputName = document.querySelector(".input__name");
 let elInputPassword = document.querySelector(".input__password");
 
-elForm?.addEventListener("submit", function (evt) {
+elForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   let nameValue = elInputName.value;
   let passwordValue = elInputPassword.value;

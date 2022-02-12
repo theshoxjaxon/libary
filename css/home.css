@@ -1,46 +1,7 @@
-/* html {
-  background-image: linear-gradient(
-    rgba(255, 255, 255, 0.5),
-    rgba(0, 0, 0, 0.6)
-  );
-  background-color: #fffa02;
-  animation: rgb 30s infinite alternate;
-  height: 100%;
-  width: 100%;
+body {
+  background-image: linear-gradient(to bottom right, red, yellow);
 }
 
-@keyframes rgb {
-  10% {
-    background-color: #ff6b02;
-  }
-  20% {
-    background-color: #ff0602;
-  }
-  30% {
-    background-color: #ff0289;
-  }
-  40% {
-    background-color: #bf02ff;
-  }
-  50% {
-    background-color: #022cff;
-  }
-  60% {
-    background-color: #02bfff;
-  }
-  70% {
-    background-color: #02ffbb;
-  }
-  80% {
-    background-color: #02ff28;
-  }
-  90% {
-    background-color: #63ff02;
-  }
-  100% {
-    background-color: #c8ff02;
-  }
-} */
 a,
 li,
 ul {
@@ -103,8 +64,16 @@ html {
   padding: 12px 40px;
 }
 .main__items {
-  width: 282px;
+  text-align: start;
+  border: 1px solid black;
+  width: 300px;
   padding: 13px 15px;
+  margin-top: 20px;
+  border-radius: 19px;
+  background-color: #fff;
+}
+.main__items:hover {
+  transition: all 0.7s;
 }
 .dfdsfads {
   padding: 18px 20px;
@@ -146,6 +115,14 @@ html {
   align-items: center;
   flex-wrap: wrap;
 }
-.main__items {
-  margin-top: 20px;
+.book__head {
+  width: 264px;
+  font-family: "Rubik";
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #000000;
+}
+.bookmark {
+  height: 100%;
 }

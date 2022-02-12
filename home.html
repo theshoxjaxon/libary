@@ -26,10 +26,13 @@
             height="44"
           />
         </a>
-        <div class="header__div">
-          <input class="input" type="text" placeholder="search books" />
-          <button type="submit" class="btn btn-danger">Watch</button>
-        </div>
+        <form class="form">
+          <div class="header__div">
+            <input class="input" type="text" placeholder="search books" />
+            <button type="submit" class="btn btn-danger">Watch</button>
+          </div>
+        </form>
+
         <button class="logout btn btn-info">Logout</button>
       </div>
     </header>
@@ -37,11 +40,19 @@
       <section>
         <h1 class="visually-hidden">Started Main</h1>
         <div class="main__top">
-          <p>Showing 18 Result(s)</p>
+          <p class="result">Showing 18 Result(s)</p>
           <button class="btn btn-danger">Order by newest</button>
         </div>
         <div>
           <ul class="main__list">
+            <!-- <li class="bookmark">
+              <div>
+                <h2>Bookmarks</h2>
+                <p>
+                  If you don’t like to read, you haven’t found the right book
+                </p>
+              </div>
+            </li> -->
             <!-- CREATE JS -->
             <!-- <li class="main__items">
               <div class="dfdsfads">

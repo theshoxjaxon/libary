@@ -1,11 +1,14 @@
 "use strict";
-const search = "ielts";
+const search = "JavaScript";
 let elHeader = document.querySelector(".header__div");
 let elLogoutBtn = document.querySelector(".logout");
 let elList = document.querySelector(".main__list");
+let elForm1 = document.querySelector(".form");
 let inputBooks = document.querySelector(".input");
 let elRuslt = document.querySelector(".result");
 let elTemplate = document.querySelector(".template");
+let xato =
+  "Saytimizda xatolok bor biz uni tog'irlash maqsadida texmik ishlarni olib boryapmiz iltimos tog'ri chuning :)";
 
 let lokalToken = window.localStorage.getItem("token");
 if (!lokalToken) {
@@ -15,27 +18,13 @@ elLogoutBtn.addEventListener("click", function () {
   window.localStorage.removeItem("token");
   window.location.replace("index.html");
 });
-
-elHeader.addEventListener("click", function (event) {
+elForm1.addEventListener("submit", function (event) {
   event.preventDefault();
-  let booksValue = inputBooks.value;
-  inputBooks.innerHTML = "";
+  let bookValue = inputBooks.value;
+  // console.log(bookValue);
+  search = bookValue;
+  getBooks();
 });
-let request = fetch(
-  "https://www.googleapis.com/books/v1/volumes?q=search+ielts"
-)
-  .then((res) => res.json())
-  .then((data) => data);
-
-// const reanderBooks = function (arr, element) {
-//   arr.forEach((element) => {
-//     const clonedBookTemplate = elTemplate.cloneNode(true);
-//     clonedBookTemplate.querySelector(".book__img").src = element;
-//   });
-//   console.log(element);
-// };
-// reanderBooks();
-
 const getBooks = async function () {
   let respons = await fetch(
     `https://www.googleapis.com/books/v1/volumes?q=${search}+terms`
@@ -46,44 +35,68 @@ const getBooks = async function () {
     reanderBooks(data.items, elList);
   }
   let arr1 = data.items;
-  // console.log(arr1);
-  arr1.forEach((element) => {
-    let newItem = document.createElement("li");
-    newItem.classList.add("main__items");
-    let newDiv = document.createElement("div");
-    newDiv.classList.add("dfdsfads");
-    newItem.appendChild(newDiv);
-    let newImg = document.createElement("img");
-    newImg.classList.add("book__img");
-    newImg.setAttribute("width", 201);
-    newImg.setAttribute("height", 202);
-    newDiv.appendChild(newImg);
-    let newHead = document.createElement("h4");
-    let newArr = arr1.slice();
-    newItem.appendChild(newHead);
-    console.log(newArr);
-    newHead.textContent = newArr.id;
-    // console.log(element);
-    // newHead.textContent = arr1.volumeInfo.
-    elList.appendChild(newItem);
-  });
-  // let html = `<li class="main__items">
-  //             <div class="dfdsfads">
-  //               <img class="book__img" src="./images/item.png" alt="" width="201" height="202" />
-  //             </div>
-  //             <h4>Python</h4>
-  //             <div class="item__descs">
-  //               <p>David M. Beazley</p>
-  //               <p>2009</p>
-  //             </div>
-  //             <div class="item__buttons d-flex">
-  //               <button class="button button__warning">Bookmark</button>
-  //               <button class="button button__info">More Info</button>
-  //             </div>
-  //             <button class="button button__secondary w-100">Read</button>
-  //           </li>`;
-  // elList.insertAdjacentHTML("beforeend", html);
+  elRuslt.textContent = `Showing ${arr1.length} Result(s)`;
 
-  // console.log(data);
+  arr1.forEach((element) => {
+    try {
+      // FOR GET ELEMENT
+      let newItem = document.createElement("li");
+      newItem.classList.add("main__items");
+      let newDiv = document.createElement("div");
+      newDiv.classList.add("dfdsfads");
+      newItem.appendChild(newDiv);
+      let newImg = document.createElement("img");
+      newImg.setAttribute(
+        "src",
+        element.volumeInfo.imageLinks.smallThumbnail ||
+          element.volumeInfo.imageLinks.thumbnail
+      );
+      newImg.classList.add("book__img");
+      newImg.setAttribute("width", 201);
+      newImg.setAttribute("height", 202);
+      newDiv.appendChild(newImg);
+      let newHead = document.createElement("h4");
+      newHead.classList.add("book__head");
+      // TEXT CONTENT
+      newHead.textContent = element.volumeInfo.title;
+      newItem.appendChild(newHead);
+      let newDivFor = document.createElement("div");
+      newDivFor.classList.add("item__descs");
+      let newDesc = document.createElement("p");
+      // TEXT CONTENT
+      newDesc.textContent = element.volumeInfo.publishedDate;
+      let newSecondDesc = document.createElement("p");
+      newSecondDesc.textContent = element.volumeInfo.publisher;
+      newDivFor.appendChild(newDesc);
+      newDivFor.appendChild(newSecondDesc);
+      newItem.appendChild(newDivFor);
+      elList.appendChild(newItem);
+      let divForButtons = document.createElement("div");
+      divForButtons.classList.add("item__buttons", "d-flex");
+      let buttonWarning = document.createElement("button");
+      buttonWarning.classList.add("button", "button__warning");
+      buttonWarning.textContent = "Bookmark";
+      let buttonInfo = document.createElement("button");
+      buttonInfo.classList.add("button", "button__info");
+      buttonInfo.textContent = "More Info";
+      divForButtons.appendChild(buttonWarning);
+      divForButtons.appendChild(buttonInfo);
+      newItem.appendChild(divForButtons);
+      let buttonSecondary = document.createElement("button");
+      buttonSecondary.classList.add("button", "button__secondary", "w-100");
+      buttonSecondary.textContent = "Read";
+      newItem.setAttribute("aria-hidden", "true");
+      newItem.appendChild(buttonSecondary);
+      newItem.setAttribute("data-aos", "flip-left");
+      newItem.setAttribute("data-aos-easing", "ease-out-cubic");
+      newItem.setAttribute("data-aos-duration", "2000");
+    } catch (err) {
+      alert(xato);
+    }
+  });
 };
 getBooks();
+
+elList.addEventListener("click", function (evt) {
+  evt.preventDefault();
+});
